@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.13)
 project(gilded-rose-refactoring-kata-cpp)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Load FetchContent module.
 include(FetchContent)
 
@@ -11,13 +13,7 @@ FetchContent_Declare(
   GIT_TAG release-1.12.1
 )
 
-FetchContent_Declare(
-  catch2 
-  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG v3.3.2
-)
-
-FetchContent_MakeAvailable(googletest catch2)
+FetchContent_MakeAvailable(googletest)
 
 #set(gtest_force_shared_crt OFF CACHE BOOL "" FORCE)
 # Force Google Test to link the C/C++ runtimes dynamically when
